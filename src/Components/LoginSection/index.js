@@ -56,8 +56,18 @@ const LoginSection = () => {
     }
   };
 
-  const LoginHandler = (otp) => {
+  // Here I  need to get otp when my api request works!!!
+  const LoginHandler = async (otp) => {
     const body = { mobile_number: phoneNumber, otp_code: enterOtp };
+    try {
+      const res = await axios.post(
+        "https://niobooks.in/api/web/authenticate",
+        body
+      );
+      sessionStorage.setItem("phone", phoneNumber);
+    } catch {
+      console.log("Error");
+    }
     console.log(body);
   };
 
