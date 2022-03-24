@@ -94,10 +94,10 @@ export const InputWrapper = styled.div`
   /* border: 2px solid green; */
   margin-top: 1rem;
   flex-direction: column;
-  /* justify-content: space-around; */
+  justify-content: ${({ gotOtp }) => (gotOtp ? "space-between" : "")};
 `;
 
-export const OtpInputWrapper = styled.div`
+export const PhoneInputWrapper = styled.div`
   display: flex;
   /* border: 2px solid red; */
   margin-top: 1rem;
@@ -129,6 +129,18 @@ export const InputAddon = styled.div`
   border-left: 1px solid grey;
 `;
 
+export const PhoneInput = styled.input`
+  display: flex;
+  height: 100%;
+  width: 100%;
+  outline: none;
+  font-size: 18px;
+  border-top: 1px solid grey;
+  border-bottom: 1px solid grey;
+  border-right: 1px solid grey;
+  border-left: 1px solid rgb(199, 196, 196);
+`;
+
 export const OtpInput = styled.input`
   display: flex;
   height: 100%;
@@ -139,6 +151,17 @@ export const OtpInput = styled.input`
   border-bottom: 1px solid grey;
   border-right: 1px solid grey;
   border-left: 1px solid rgb(199, 196, 196);
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+`;
+
+export const OtpInputWrapper = styled.div`
+  display: flex;
+  /* border: 2px solid red; */
+  margin-top: 1rem;
+  height: 30%;
+  width: 100%;
+  flex-direction: column;
 `;
 
 export const Button = styled.button`

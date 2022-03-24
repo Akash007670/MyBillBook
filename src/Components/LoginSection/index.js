@@ -17,6 +17,8 @@ import {
   Span,
   Button,
   ErrorText,
+  PhoneInputWrapper,
+  PhoneInput,
 } from "./LoginElement";
 import IsoLogo from "../../assets/icn_ISO.svg";
 import axios from "axios";
@@ -24,6 +26,8 @@ import axios from "axios";
 const LoginSection = () => {
   const [phoneNumber, setPhoneNumber] = useState("");
   const [error, setError] = useState("");
+  const [gotOtp, setGotOtp] = useState(false);
+  const [enterOtp, setEnterOtp] = useState("");
 
   const isValidNumber = (phoneNumber) => {
     const regex = /^(\+\d{1,3}[- ]?)?\d{10}$/;
@@ -44,10 +48,17 @@ const LoginSection = () => {
         "https://niobooks.in/api/web/request_otp",
         body
       );
+      setGotOtp(true);
       console.log(res);
     } catch {
       console.log("error");
+      setGotOtp(false);
     }
+  };
+
+  const LoginHandler = (otp) => {
+    const body = { mobile_number: phoneNumber, otp_code: enterOtp };
+    console.log(body);
   };
 
   return (
@@ -72,21 +83,38 @@ const LoginSection = () => {
             <Heading3>Login To myBillBook</Heading3>
             <InputWrapper>
               <Span>Enter the Mobile Number</Span>
-              <OtpInputWrapper>
+              <PhoneInputWrapper>
                 <InputAddon>+91</InputAddon>
-                <OtpInput
+                <PhoneInput
                   input
                   type="number"
                   value={phoneNumber}
                   onChange={(e) => setPhoneNumber(e.target.value)}
                 />
-              </OtpInputWrapper>
+              </PhoneInputWrapper>
               {getOtpHandler ? <ErrorText>{error}</ErrorText> : ""}
+              {gotOtp ? (
+                <>
+                  <OtpInputWrapper>
+                    <Span>Enter OTP</Span>
+                    <OtpInput
+                      input
+                      type="text"
+                      placeholder="Enter One Time Password"
+                      value={enterOtp}
+                      onChange={(e) => setEnterOtp(e.target.value)}
+                    />
+                    <Span>Resend OTP in 00:00 seconds</Span>
+                  </OtpInputWrapper>
+                </>
+              ) : (
+                ""
+              )}
               <Button
-                onClick={getOtpHandler}
+                onClick={gotOtp ? LoginHandler : getOtpHandler}
                 hasPhoneNumber={phoneNumber.length > 9}
               >
-                GET OTP
+                {gotOtp ? "Login" : "GET OTP"}
               </Button>
             </InputWrapper>
           </LoginFormWrapper>
