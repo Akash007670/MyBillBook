@@ -9,7 +9,7 @@ export const Nav = styled.nav`
   justify-content: center;
   align-items: center;
   font-size: 1rem;
-  position: sticky;
+  /* position: sticky; */
   top: 0;
   z-index: 10;
 
@@ -26,7 +26,7 @@ export const NavbarContainer = styled.div`
   height: 80px;
   width: 100%;
   padding: 0 24px;
-  max-width: 1600px;
+  max-width: 1500px;
 `;
 
 export const NavLogo = styled(LinkR)`
