@@ -10,7 +10,7 @@ export const ItemPageWrapper = styled.div`
 
 export const NavWrapper = styled.div`
   display: flex;
-  height: 10%;
+  height: 7%;
   /* border-bottom: 2px solid rgb(225 225 225); */
   width: 100%;
   align-items: center;
@@ -52,6 +52,8 @@ export const FormTableWrapper = styled.div`
   border: 1px solid rgb(225 225 225);
   height: 100%;
   width: 65%;
+  flex-direction: column;
+  justify-content: space-between;
 `;
 export const FormWrapper = styled.div`
   display: flex;
@@ -111,16 +113,17 @@ export const Text2 = styled.p`
 export const Input = styled.input`
   display: flex;
   height: 100%;
+  width: 100%;
   border-radius: 6px;
   border: 2px solid rgb(231 228 228);
   &::placeholder {
-    padding: 1rem;
+    padding-left: 1.5rem;
   }
 `;
 
 export const Select = styled.select`
   width: 100%;
-  height: 35px;
+  height: 100%;
   background: white;
   color: gray;
   font-size: 14px;
@@ -151,4 +154,106 @@ export const Submit = styled.button`
   outline: none;
   color: white;
   background-color: rgb(76 60 206);
+`;
+
+//Form Table Css Starts Here //
+
+export const TableTitle = styled.p`
+  display: flex;
+  border-bottom: 1px solid rgb(225 225 225);
+  height: 6%;
+  align-items: center;
+  color: grey;
+  font-size: 18px;
+  font-weight: 600;
+  padding: 0 2rem;
+`;
+
+export const TableSearchbar = styled.div`
+  display: flex;
+  /* border: 2px solid green; */
+  margin-top: 10px;
+  height: 6%;
+  width: 50%;
+  padding: 0 2rem;
+`;
+
+export const SearchbarWrapper = styled.div`
+  position: relative;
+`;
+export const Icon = styled.div`
+  display: flex;
+  align-items: center;
+  margin-left: 5px;
+  justify-content: center;
+  border-top: 2px solid rgb(231 228 228);
+  border-left: 2px solid rgb(231 228 228);
+  border-bottom: 2px solid rgb(231 228 228);
+  width: 2rem;
+`;
+
+//Table data starts here//
+
+export const TableDataWrapper = styled.div`
+  display: flex;
+  /* border: 2px solid blue; */
+  margin-top: 1rem;
+  height: 80%;
+  padding: 0 2rem;
+`;
+
+export const Table = styled.table`
+  display: flex;
+  flex-direction: column;
+  /* border: 2px solid red; */
+  height: 100%;
+  width: 100%;
+`;
+
+export const Thead = styled.thead`
+  display: flex;
+  height: 10%;
+  border: 1px solid rgb(231 231 231);
+  padding: 1rem;
+  background-color: rgb(241 241 241);
+`;
+export const Tr = styled.tr`
+  display: flex;
+  height: 100%;
+  width: 100%;
+  /* border: 2px solid green; */
+  padding: 1rem;
+  justify-content: space-between;
+`;
+
+export const TBodyRow = styled.tr`
+  display: flex;
+  height: 15%;
+  text-align: start;
+  border: 1px solid rgb(231 231 231);
+  padding: 2rem;
+  /* margin-bottom: 1px; */
+  justify-content: space-between;
+`;
+
+export const Th = styled.th`
+  display: flex;
+  text-transform: uppercase;
+  color: rgb(183 183 183);
+  height: 100%;
+  align-items: center;
+  text-align: center;
+  /* border: 2px solid black; */
+`;
+export const Tbody = styled.tbody`
+  display: flex;
+  /* border: 2px solid blue; */
+  flex-direction: column;
+  height: 60%;
+`;
+export const Td = styled.td`
+  display: flex;
+  /* border: 2px solid gray; */
+  width: 9%;
+  align-items: center;
 `;
