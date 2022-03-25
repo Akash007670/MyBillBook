@@ -13,7 +13,7 @@ const App = () => {
       <LoginSection />
       <Statistics />
       <Pricing />
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 };
