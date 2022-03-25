@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   FormTableWrapper,
   Icon,
@@ -17,6 +17,7 @@ import {
 import { ReactComponent as SearchIcon } from "../../assets/icn_search 1.svg";
 
 const TableElement = ({ data }) => {
+  const [search, setSearch] = useState("");
   const keys = Object.keys(data[0]);
   return (
     <>
@@ -24,7 +25,10 @@ const TableElement = ({ data }) => {
         <TableTitle>Items</TableTitle>
         <TableSearchbar>
           <Icon>
-            <SearchIcon />
+            <SearchIcon
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+            />
           </Icon>
           <Input type="text" placeholder="Search items" />
         </TableSearchbar>

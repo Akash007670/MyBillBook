@@ -29,14 +29,14 @@ export const GetInTouchSection = styled.div`
   /* justify-content: space-around; */
 `;
 
-export const Email = styled.text`
+export const Email = styled.p`
   display: flex;
   font-size: 1rem;
   /* border: 2px solid red; */
   font-weight: 500;
   margin-top: 10px;
 `;
-export const PhoneNumber = styled.text`
+export const PhoneNumber = styled.p`
   display: flex;
   font-size: 2rem;
   /* border: 2px solid red; */

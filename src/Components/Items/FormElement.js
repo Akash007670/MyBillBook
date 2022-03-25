@@ -7,7 +7,7 @@ import {
   ItemNameWrapper,
   Select,
   Submit,
-  Text,
+  Text1,
   Text2,
   TtileWrapper,
 } from "./ItemElement";
@@ -33,7 +33,7 @@ const FormElement = () => {
         <Form>
           <Flex>
             <ItemNameWrapper>
-              <Text>Item Name*</Text>
+              <Text1>Item Name*</Text1>
               <Input
                 type="text"
                 placeholder="Enter item name"
@@ -44,7 +44,7 @@ const FormElement = () => {
               />
             </ItemNameWrapper>
             <ItemNameWrapper>
-              <Text>Item Code</Text>
+              <Text1>Item Code</Text1>
               <Input
                 type="text"
                 placeholder="Enter item code"
@@ -60,7 +60,7 @@ const FormElement = () => {
           </Flex>
           <Flex>
             <ItemNameWrapper>
-              <Text>Sales Price*</Text>
+              <Text1>Sales Price*</Text1>
               <Input
                 type="number"
                 placeholder="₹ 0"
@@ -71,7 +71,7 @@ const FormElement = () => {
               />
             </ItemNameWrapper>
             <ItemNameWrapper>
-              <Text>Purchase Price</Text>
+              <Text1>Purchase Price</Text1>
               <Input
                 type="number"
                 placeholder="₹ 0"
@@ -84,7 +84,7 @@ const FormElement = () => {
           </Flex>
           <Flex>
             <ItemNameWrapper>
-              <Text>Measuring UNIT</Text>
+              <Text1>Measuring UNIT</Text1>
               <Select
                 onChange={(e) =>
                   setFormData({ ...formData, measuringUnit: e.target.value })
@@ -100,7 +100,7 @@ const FormElement = () => {
               </Select>
             </ItemNameWrapper>
             <ItemNameWrapper>
-              <Text>Opening Stock Date</Text>
+              <Text1>Opening Stock Date</Text1>
               <Input
                 type="date"
                 placeholder="Enter item code"

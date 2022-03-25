@@ -97,7 +97,7 @@ export const ItemNameWrapper = styled.div`
   flex-direction: column;
   height: 100%;
 `;
-export const Text = styled.p`
+export const Text1 = styled.p`
   display: flex;
   font-size: 20px;
   color: rgb(165 188 215);

@@ -69,9 +69,7 @@ const Items = () => {
     <>
       <ItemPageWrapper>
         <NavWrapper>
-          <PhoneNumber>
-            {phoneNumber ? phoneNumber : "Please Login"}
-          </PhoneNumber>
+          <PhoneNumber>{phoneNumber}</PhoneNumber>
           <Logout onClick={logOutHandler} value={logout}>
             Logout
           </Logout>
