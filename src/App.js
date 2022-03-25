@@ -1,19 +1,16 @@
 import React from "react";
 import "./App.css";
-import Footer from "./Components/Footer";
-import LoginSection from "./Components/LoginSection";
-import Navbar from "./Components/Navbar";
-import Pricing from "./Components/Pricing";
-import Statistics from "./Components/Statistics";
+import Items from "./Components/Items";
+import Dashboard from "./Components/Dashboard";
+import { Route, Switch } from "react-router-dom";
 
 const App = () => {
   return (
     <div>
-      <Navbar />
-      <LoginSection />
-      <Statistics />
-      <Pricing />
-      <Footer />
+      <Switch>
+        <Route path="/" component={Dashboard} exact />
+        <Route path="/items" component={Items} />
+      </Switch>
     </div>
   );
 };

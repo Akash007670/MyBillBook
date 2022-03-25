@@ -22,12 +22,14 @@ import {
 } from "./LoginElement";
 import IsoLogo from "../../assets/icn_ISO.svg";
 import axios from "axios";
+import { useHistory } from "react-router-dom";
 
 const LoginSection = () => {
   const [phoneNumber, setPhoneNumber] = useState("");
   const [error, setError] = useState("");
   const [gotOtp, setGotOtp] = useState(false);
   const [enterOtp, setEnterOtp] = useState("");
+  const history = useHistory();
 
   const isValidNumber = (phoneNumber) => {
     const regex = /^(\+\d{1,3}[- ]?)?\d{10}$/;
@@ -57,13 +59,17 @@ const LoginSection = () => {
   };
 
   // Here I  need to get otp when my api request works!!!
-  const LoginHandler = async (otp) => {
+  const LoginHandler = async () => {
     const body = { mobile_number: phoneNumber, otp_code: enterOtp };
     try {
       const res = await axios.post(
         "https://niobooks.in/api/web/authenticate",
         body
       );
+      console.log(res);
+      if (res) {
+        history.push("/items");
+      }
       sessionStorage.setItem("phone", phoneNumber);
     } catch {
       console.log("Error");
