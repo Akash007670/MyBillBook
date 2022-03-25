@@ -54,6 +54,7 @@ export const PriceContainer = styled.div`
 `;
 export const Container = styled.div`
   display: flex;
+  position: relative;
   height: 90%;
   width: 28%;
   margin: 2rem auto;
@@ -68,8 +69,28 @@ export const Container = styled.div`
   }
 `;
 
+export const PopularTag = styled.div`
+  display: flex;
+  position: absolute;
+  width: 40%;
+  height: 10%;
+  top: -1.3rem;
+  color: white;
+  background-color: rgb(237 81 63);
+  font-weight: 500;
+  border-radius: 30px;
+  border: none;
+  outline: none;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  margin-right: 1rem;
+  right: 0;
+`;
+
 export const IconWrapper = styled.div`
   /* border: 2px solid red; */
+  padding: 0 1rem;
   height: 10%;
   svg {
     height: 40px;
@@ -82,6 +103,7 @@ export const PriceTitle = styled.div`
   font-size: 25px;
   margin-top: 10px;
   font-weight: bold;
+  padding: 0 1rem;
   /* border: 2px solid green; */
 `;
 
@@ -90,10 +112,12 @@ export const Prices = styled.div`
   align-items: center;
   text-align: center;
   margin-top: 1rem;
+  padding: 0 1rem;
 `;
 export const Price = styled.p`
   display: flex;
   text-decoration: line-through;
+  color: grey;
   font-size: 15px;
 `;
 export const RealPrice = styled.p`
@@ -180,6 +204,7 @@ export const Title4 = styled.p`
 export const DescriptionDiv = styled.div`
   display: flex;
   /* border: 2px solid green; */
+  padding: 0 1rem;
   height: 45%;
   flex-direction: column;
   /* justify-content: space-around; */

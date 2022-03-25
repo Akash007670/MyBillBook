@@ -8,6 +8,7 @@ import {
   MobileDesktopDiv,
   MobileDesktopDiv2,
   MobileDesktopDiv3,
+  PopularTag,
   Price,
   PriceContainer,
   Prices,
@@ -77,6 +78,7 @@ const PricingComponent = () => {
         {/* //Gold Container Starts here // */}
 
         <Container>
+          <PopularTag>Most Popular</PopularTag>
           <IconWrapper>
             <GoldCrownIcon />
           </IconWrapper>
