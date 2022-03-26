@@ -15,6 +15,8 @@ import TableElement from "./TableElement";
 const Items = () => {
   const [logout, setLogout] = useState(false);
   const [getFormData, setGetFormtData] = useState([]);
+  const [searchData, setSearchData] = useState("");
+  const [wholeData, setWholeData] = useState([]);
   const [formData, setFormData] = useState({
     itemName: "",
     itemCode: "",
@@ -25,6 +27,10 @@ const Items = () => {
   });
   const history = useHistory();
   let phoneNumber = sessionStorage.getItem("phone");
+
+  useEffect(() => {
+    setWholeData(getFormData);
+  }, [getFormData]);
 
   const logOutHandler = () => {
     setLogout(true);
@@ -49,6 +55,25 @@ const Items = () => {
     });
   };
 
+  const searchHandler = (value) => {
+    setSearchData(value);
+    if (value !== "") {
+      let filterResult = [...getFormData];
+      filterResult = filterResult.filter((row) => {
+        const userData = `${Object.values(
+          `${row.itemName}${row.itemCode}`
+        ).join("")}.`;
+        if (userData.includes(value.toLowerCase().trim())) {
+          return true;
+        }
+        return false;
+      });
+      setGetFormtData(filterResult);
+    } else {
+      setGetFormtData(wholeData);
+    }
+  };
+
   return (
     <>
       <ItemPageWrapper>
@@ -63,6 +88,8 @@ const Items = () => {
             data={getFormData}
             formData={formData}
             setFormData={setFormData}
+            value={searchData}
+            searchHandler={searchHandler}
           />
           <FormElement
             setGetFormtData={setGetFormtData}

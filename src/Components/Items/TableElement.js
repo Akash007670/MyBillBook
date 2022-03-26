@@ -19,7 +19,7 @@ import {
 import { ReactComponent as SearchIcon } from "../../assets/icn_search 1.svg";
 import { ReactComponent as NotFoundIcon } from "../../assets/icn_Inventory Reports.svg";
 
-const TableElement = ({ data, setFormData }) => {
+const TableElement = ({ data, setFormData, value, searchHandler }) => {
   const keys = data.length > 0 ? Object.keys(data[0]) : "";
 
   const updateHandler = (obj) => {
@@ -34,7 +34,12 @@ const TableElement = ({ data, setFormData }) => {
           <Icon>
             <SearchIcon />
           </Icon>
-          <Input type="text" placeholder="Search items" />
+          <Input
+            type="text"
+            placeholder="Search items"
+            value={value}
+            onChange={(e) => searchHandler(e.target.value)}
+          />
         </TableSearchbar>
         <TableDataWrapper>
           <Table>

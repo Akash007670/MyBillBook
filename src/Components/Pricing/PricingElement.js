@@ -8,6 +8,10 @@ export const PricingElementWrapper = styled.div`
   max-width: 1500px;
   margin: 0 auto;
   flex-direction: column;
+  @media screen and (max-width: 960px) {
+    height: 70vh;
+    /* border: 2px solid red; */
+  }
 `;
 
 export const PricingTitleWrapper = styled.div`
