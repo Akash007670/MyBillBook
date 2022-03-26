@@ -12,7 +12,7 @@ import {
   TtileWrapper,
 } from "./ItemElement";
 
-const FormElement = () => {
+const FormElement = ({ setGetFormtData }) => {
   const [formData, setFormData] = useState({
     itemName: "",
     itemCode: "",
@@ -24,7 +24,15 @@ const FormElement = () => {
 
   const FormSubmitHandler = (e) => {
     e.preventDefault();
-    console.log(formData);
+    setGetFormtData(formData);
+    setFormData({
+      itemName: "",
+      itemCode: "",
+      salesPrice: "",
+      purchasePrice: "",
+      measuringUnit: "",
+      openingDate: "",
+    });
   };
   return (
     <>

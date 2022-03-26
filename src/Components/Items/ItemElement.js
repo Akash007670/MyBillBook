@@ -256,4 +256,5 @@ export const Td = styled.td`
   /* border: 2px solid gray; */
   width: 9%;
   align-items: center;
+  cursor: pointer;
 `;

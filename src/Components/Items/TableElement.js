@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   FormTableWrapper,
   Icon,
@@ -18,7 +18,14 @@ import { ReactComponent as SearchIcon } from "../../assets/icn_search 1.svg";
 
 const TableElement = ({ data }) => {
   const [search, setSearch] = useState("");
-  const keys = Object.keys(data[0]);
+  console.log(data);
+  const keys = Object.keys(data);
+  const values = Object.values(data);
+
+  const updateHandler = () => {
+    console.log(data);
+  };
+
   return (
     <>
       <FormTableWrapper>
@@ -45,14 +52,11 @@ const TableElement = ({ data }) => {
               </Tr>
             </Thead>
             <Tbody>
-              {data.map((obj, index) => (
-                <TBodyRow key={index}>
-                  {keys.map((item, index) => {
-                    const value = obj[item];
-                    return <Td key={index}>{value}</Td>;
-                  })}
-                </TBodyRow>
-              ))}
+              <TBodyRow key={keys} onClick={updateHandler}>
+                {values.map((item, index) => {
+                  return <Td key={index}>{item}</Td>;
+                })}
+              </TBodyRow>
             </Tbody>
           </Table>
         </TableDataWrapper>

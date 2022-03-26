@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   ItemFormWrapper,
   ItemPageWrapper,
@@ -10,51 +10,9 @@ import { useHistory } from "react-router-dom";
 import FormElement from "./FormElement";
 import TableElement from "./TableElement";
 
-const data = [
-  {
-    itemName: "abc",
-    itemCode: "abc",
-    salesPrice: "10",
-    purchasePrice: "19989",
-    measuringUnit: "gms",
-    openingDate: "2022-03-26",
-  },
-  {
-    itemName: "dfsd",
-    itemCode: "rtrrt",
-    salesPrice: "10",
-    purchasePrice: "19",
-    measuringUnit: "gms",
-    openingDate: "2022-03-26",
-  },
-  {
-    itemName: "abc",
-    itemCode: "abc",
-    salesPrice: "10",
-    purchasePrice: "19989",
-    measuringUnit: "gms",
-    openingDate: "2022-03-26",
-  },
-  {
-    itemName: "abc",
-    itemCode: "abc",
-    salesPrice: "10",
-    purchasePrice: "19989",
-    measuringUnit: "gms",
-    openingDate: "2022-03-26",
-  },
-  {
-    itemName: "abc",
-    itemCode: "abc",
-    salesPrice: "10",
-    purchasePrice: "19989",
-    measuringUnit: "gms",
-    openingDate: "2022-03-26",
-  },
-];
-
 const Items = () => {
   const [logout, setLogout] = useState(false);
+  const [getFormData, seGetFormtData] = useState([]);
   const history = useHistory();
   let phoneNumber = sessionStorage.getItem("phone");
 
@@ -75,8 +33,12 @@ const Items = () => {
           </Logout>
         </NavWrapper>
         <ItemFormWrapper>
-          <TableElement data={data} />
-          <FormElement />
+          {getFormData.length === 0 ? (
+            <TableElement data={getFormData} />
+          ) : (
+            <TableElement data={getFormData} />
+          )}
+          <FormElement setGetFormtData={seGetFormtData} />
         </ItemFormWrapper>
       </ItemPageWrapper>
     </>
