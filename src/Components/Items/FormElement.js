@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { v4 as uuidv4 } from "uuid";
 import {
   Flex,
   Form,
@@ -24,7 +25,10 @@ const FormElement = ({ setGetFormtData }) => {
 
   const FormSubmitHandler = (e) => {
     e.preventDefault();
-    setGetFormtData(formData);
+    setGetFormtData((prevState) => [
+      ...prevState,
+      { ...formData, _id: uuidv4() },
+    ]);
     setFormData({
       itemName: "",
       itemCode: "",
@@ -34,6 +38,7 @@ const FormElement = ({ setGetFormtData }) => {
       openingDate: "",
     });
   };
+
   return (
     <>
       <FormWrapper>
