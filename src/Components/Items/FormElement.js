@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { v4 as uuidv4 } from "uuid";
 import {
   Flex,
   Form,
@@ -13,32 +12,7 @@ import {
   TtileWrapper,
 } from "./ItemElement";
 
-const FormElement = ({ setGetFormtData }) => {
-  const [formData, setFormData] = useState({
-    itemName: "",
-    itemCode: "",
-    salesPrice: "",
-    purchasePrice: "",
-    measuringUnit: "",
-    openingDate: "",
-  });
-
-  const FormSubmitHandler = (e) => {
-    e.preventDefault();
-    setGetFormtData((prevState) => [
-      ...prevState,
-      { ...formData, _id: uuidv4() },
-    ]);
-    setFormData({
-      itemName: "",
-      itemCode: "",
-      salesPrice: "",
-      purchasePrice: "",
-      measuringUnit: "",
-      openingDate: "",
-    });
-  };
-
+const FormElement = ({ setFormData, formData, formSubmitHandler }) => {
   return (
     <>
       <FormWrapper>
@@ -125,7 +99,7 @@ const FormElement = ({ setGetFormtData }) => {
             </ItemNameWrapper>
           </Flex>
           <Flex>
-            <Submit onClick={FormSubmitHandler}>Save</Submit>
+            <Submit onClick={formSubmitHandler}>Save</Submit>
           </Flex>
         </Form>
       </FormWrapper>

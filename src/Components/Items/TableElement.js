@@ -16,15 +16,12 @@ import {
 } from "./ItemElement";
 import { ReactComponent as SearchIcon } from "../../assets/icn_search 1.svg";
 
-const TableElement = ({ data }) => {
+const TableElement = ({ data, setFormData }) => {
   const [search, setSearch] = useState("");
-  console.log(data);
-  // const values = Object.values(data);
-  // console.log("table data", values);
   const keys = data.length > 0 ? Object.keys(data[0]) : "";
-  console.log(keys);
-  const updateHandler = (id) => {
-    console.log(id);
+
+  const updateHandler = (obj) => {
+    setFormData(obj);
   };
 
   return (
@@ -55,7 +52,7 @@ const TableElement = ({ data }) => {
             <Tbody>
               {data.length > 0 &&
                 data.map((obj, index) => (
-                  <TBodyRow key={index} onClick={() => updateHandler(obj._id)}>
+                  <TBodyRow key={index} onClick={() => updateHandler(obj)}>
                     {keys.slice(0, 6).map((item, index) => (
                       <Td key={index}>{obj[item]}</Td>
                     ))}
