@@ -258,3 +258,19 @@ export const Td = styled.td`
   align-items: center;
   cursor: pointer;
 `;
+
+export const NotFound = styled.div`
+  display: flex;
+  height: 80%;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+`;
+
+export const NotFoundTitle = styled.p`
+  display: flex;
+  font-size: 20px;
+  font-weight: 600;
+  margin-left: 1rem;
+  color: rgb(165 188 215);
+`;

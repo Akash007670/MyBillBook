@@ -1,8 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import {
   FormTableWrapper,
   Icon,
   Input,
+  NotFound,
+  NotFoundTitle,
   Table,
   TableDataWrapper,
   TableSearchbar,
@@ -15,9 +17,9 @@ import {
   Tr,
 } from "./ItemElement";
 import { ReactComponent as SearchIcon } from "../../assets/icn_search 1.svg";
+import { ReactComponent as NotFoundIcon } from "../../assets/icn_Inventory Reports.svg";
 
 const TableElement = ({ data, setFormData }) => {
-  const [search, setSearch] = useState("");
   const keys = data.length > 0 ? Object.keys(data[0]) : "";
 
   const updateHandler = (obj) => {
@@ -30,10 +32,7 @@ const TableElement = ({ data, setFormData }) => {
         <TableTitle>Items</TableTitle>
         <TableSearchbar>
           <Icon>
-            <SearchIcon
-              value={search}
-              onChange={(e) => setSearch(e.target.value)}
-            />
+            <SearchIcon />
           </Icon>
           <Input type="text" placeholder="Search items" />
         </TableSearchbar>
@@ -50,14 +49,25 @@ const TableElement = ({ data, setFormData }) => {
               </Tr>
             </Thead>
             <Tbody>
-              {data.length > 0 &&
-                data.map((obj, index) => (
-                  <TBodyRow key={index} onClick={() => updateHandler(obj)}>
-                    {keys.slice(0, 6).map((item, index) => (
-                      <Td key={index}>{obj[item]}</Td>
+              {data.length > 0 ? (
+                <>
+                  {data.length > 0 &&
+                    data.map((obj, index) => (
+                      <TBodyRow key={index} onClick={() => updateHandler(obj)}>
+                        {keys.slice(0, 6).map((item, index) => (
+                          <Td key={index}>{obj[item]}</Td>
+                        ))}
+                      </TBodyRow>
                     ))}
-                  </TBodyRow>
-                ))}
+                </>
+              ) : (
+                <NotFound>
+                  <NotFoundIcon />
+                  <NotFoundTitle>
+                    You Do not have any items to display
+                  </NotFoundTitle>
+                </NotFound>
+              )}
             </Tbody>
           </Table>
         </TableDataWrapper>
