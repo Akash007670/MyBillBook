@@ -19,7 +19,7 @@ import {
 import { ReactComponent as SearchIcon } from "../../assets/icn_search 1.svg";
 import { ReactComponent as NotFoundIcon } from "../../assets/icn_Inventory Reports.svg";
 
-const TableElement = ({ data, setFormData, value, searchHandler }) => {
+const TableElement = ({ data, setFormData, value, searchHandler, error }) => {
   const keys = data.length > 0 ? Object.keys(data[0]) : "";
 
   const updateHandler = (obj) => {
@@ -54,7 +54,7 @@ const TableElement = ({ data, setFormData, value, searchHandler }) => {
               </Tr>
             </Thead>
             <Tbody>
-              {data.length > 0 ? (
+              {data.length > 0 && !error ? (
                 <>
                   {data.length > 0 &&
                     data.map((obj, index) => (

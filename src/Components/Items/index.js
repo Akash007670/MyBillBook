@@ -17,6 +17,7 @@ const Items = () => {
   const [getFormData, setGetFormtData] = useState([]);
   const [searchData, setSearchData] = useState("");
   const [wholeData, setWholeData] = useState([]);
+  const [error, setError] = useState("");
   const [formData, setFormData] = useState({
     itemName: "",
     itemCode: "",
@@ -30,7 +31,23 @@ const Items = () => {
 
   useEffect(() => {
     setWholeData(getFormData);
-  }, [getFormData]);
+  }, []);
+
+  const errorHandler = () => {
+    if (formData.itemName === "") {
+      setError("Enter Item Name");
+    } else if (formData.itemCode === "") {
+      setError("Enter item code");
+    } else if (formData.salesPrice === "") {
+      setError("Enter sales price");
+    } else if (formData.purchasePrice === "") {
+      setError("Enter purchase price");
+    } else if (formData.measuringUnit === "") {
+      setError("Select measuring unit");
+    } else if (formData.openingDate === "") {
+      setError("Select date");
+    }
+  };
 
   const logOutHandler = () => {
     setLogout(true);
@@ -41,10 +58,23 @@ const Items = () => {
 
   const formSubmitHandler = (e) => {
     e.preventDefault();
-    setGetFormtData((prevState) => [
-      ...prevState,
-      { ...formData, _id: uuidv4() },
-    ]);
+    errorHandler();
+    if (error) {
+      alert("Enter details");
+    } else {
+      setGetFormtData((prevState) => [
+        ...prevState,
+        { ...formData, _id: uuidv4() },
+      ]);
+      setFormData({
+        itemName: "",
+        itemCode: "",
+        salesPrice: "",
+        purchasePrice: "",
+        measuringUnit: "",
+        openingDate: "",
+      });
+    }
     setFormData({
       itemName: "",
       itemCode: "",
@@ -61,9 +91,10 @@ const Items = () => {
       let filterResult = [...getFormData];
       filterResult = filterResult.filter((row) => {
         const userData = `${Object.values(
-          `${row.itemName}${row.itemCode}`
+          `${row.itemName} ${row.itemCode}`
         ).join("")}.`;
-        if (userData.includes(value.toLowerCase().trim())) {
+        const el = userData.toLowerCase().trim();
+        if (el.includes(value.toLowerCase().trim())) {
           return true;
         }
         return false;
@@ -90,12 +121,14 @@ const Items = () => {
             setFormData={setFormData}
             value={searchData}
             searchHandler={searchHandler}
+            error={error}
           />
           <FormElement
             setGetFormtData={setGetFormtData}
             formSubmitHandler={formSubmitHandler}
             setFormData={setFormData}
             formData={formData}
+            error={error}
           />
         </ItemFormWrapper>
       </ItemPageWrapper>

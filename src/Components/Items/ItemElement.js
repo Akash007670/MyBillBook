@@ -274,3 +274,9 @@ export const NotFoundTitle = styled.p`
   margin-left: 1rem;
   color: rgb(165 188 215);
 `;
+
+export const ErrorText = styled.p`
+  display: flex;
+  font-size: 12px;
+  color: red;
+`;

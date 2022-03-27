@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import {
+  ErrorText,
   Flex,
   Form,
   FormWrapper,
@@ -12,7 +13,7 @@ import {
   TtileWrapper,
 } from "./ItemElement";
 
-const FormElement = ({ setFormData, formData, formSubmitHandler }) => {
+const FormElement = ({ setFormData, formData, formSubmitHandler, error }) => {
   return (
     <>
       <FormWrapper>
@@ -29,6 +30,7 @@ const FormElement = ({ setFormData, formData, formSubmitHandler }) => {
                 }
                 value={formData.itemName}
               />
+              {error && <ErrorText>Enter item name</ErrorText>}
             </ItemNameWrapper>
             <ItemNameWrapper>
               <Text1>Item Code</Text1>
@@ -40,6 +42,7 @@ const FormElement = ({ setFormData, formData, formSubmitHandler }) => {
                 }
                 value={formData.itemCode}
               />
+              {error && <ErrorText>Enter item code</ErrorText>}
             </ItemNameWrapper>
           </Flex>
           <Flex>
@@ -56,6 +59,7 @@ const FormElement = ({ setFormData, formData, formSubmitHandler }) => {
                 }
                 value={formData.salesPrice}
               />
+              {error && <ErrorText>Enter sales price</ErrorText>}
             </ItemNameWrapper>
             <ItemNameWrapper>
               <Text1>Purchase Price</Text1>
@@ -67,6 +71,7 @@ const FormElement = ({ setFormData, formData, formSubmitHandler }) => {
                 }
                 value={formData.purchasePrice}
               />
+              {error && <ErrorText>Enter purchase price</ErrorText>}
             </ItemNameWrapper>
           </Flex>
           <Flex>
@@ -85,6 +90,7 @@ const FormElement = ({ setFormData, formData, formSubmitHandler }) => {
                 <option>kgs</option>
                 <option>ltr</option>
               </Select>
+              {error && <ErrorText>Enter measuring unit</ErrorText>}
             </ItemNameWrapper>
             <ItemNameWrapper>
               <Text1>Opening Stock Date</Text1>
@@ -96,6 +102,7 @@ const FormElement = ({ setFormData, formData, formSubmitHandler }) => {
                 }
                 value={formData.openingDate}
               />
+              {error && <ErrorText>Enter date</ErrorText>}
             </ItemNameWrapper>
           </Flex>
           <Flex>
