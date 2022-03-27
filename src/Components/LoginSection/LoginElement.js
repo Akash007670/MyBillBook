@@ -19,13 +19,16 @@ export const ContentWrapper = styled.div`
 
 export const HeroTextWrapper = styled.div`
   display: flex;
-  /* border: 2px solid red; */
+  /*  */
   height: 100%;
   width: 60%;
   justify-content: space-between;
   flex-direction: column;
   /* margin: 0 auto; */
   align-items: center;
+  @media screen and (max-width: 968px) {
+    width: 50%;
+  }
 `;
 
 export const HeroText = styled.div`
@@ -37,14 +40,25 @@ export const HeroText = styled.div`
   padding-left: 1.5rem;
   flex-direction: column;
   justify-content: space-around;
+  @media screen and (max-width: 968px) {
+    height: 60%;
+    margin-top: 4rem;
+  }
 `;
 
 export const Heading = styled.h2`
   display: flex;
-  /* border: 2px solid red; */
+  /*  */
   font-size: 40px;
   font-weight: bold;
   text-align: start;
+  margin-bottom: 10px;
+  @media screen and (max-width: 968px) {
+    font-size: 35px;
+  }
+  @media screen and (max-width: 1024px) {
+    font-size: 35px;
+  }
 `;
 export const Heading2 = styled.p`
   display: flex;
@@ -52,6 +66,9 @@ export const Heading2 = styled.p`
   font-size: 40px;
   font-weight: 400;
   text-align: start;
+  @media screen and (max-width: 968px) {
+    font-size: 35px;
+  }
 `;
 export const Heading3 = styled.p`
   display: flex;
@@ -59,11 +76,14 @@ export const Heading3 = styled.p`
   text-align: start;
   color: #0c0c0cb5;
   font-weight: bold;
+  @media screen and (max-width: 968px) {
+    font-size: 16px;
+  }
 `;
 
 export const MadeInLoveWrapper = styled.div`
   display: flex;
-  /* border: 2px solid red; */
+  /*  */
   width: 93%;
   align-items: center;
 `;
@@ -85,6 +105,9 @@ export const LoginFormWrapper = styled.div`
   border-radius: 8px;
   padding: 2rem;
   box-shadow: 1px 2px 15px rgb(243, 233, 224);
+  @media screen and (max-width: 968px) {
+    width: 50%;
+  }
 `;
 
 export const InputWrapper = styled.div`
@@ -99,7 +122,7 @@ export const InputWrapper = styled.div`
 
 export const PhoneInputWrapper = styled.div`
   display: flex;
-  /* border: 2px solid red; */
+  /*  */
   margin-top: 1rem;
   height: 10%;
   width: 100%;
@@ -157,7 +180,7 @@ export const OtpInput = styled.input`
 
 export const OtpInputWrapper = styled.div`
   display: flex;
-  /* border: 2px solid red; */
+  /*  */
   margin-top: 1rem;
   height: 30%;
   width: 100%;

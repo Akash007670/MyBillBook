@@ -2,21 +2,18 @@ import styled from "styled-components";
 
 export const PricingElementWrapper = styled.div`
   display: flex;
-  /* border: 2px solid red; */
-  height: 65vh;
+  height: 75vh;
   width: 100%;
   max-width: 1500px;
   margin: 0 auto;
   flex-direction: column;
-  @media screen and (max-width: 960px) {
-    height: 70vh;
-    /* border: 2px solid red; */
+  @media screen and (max-width: 968px) {
+    height: 80vh;
   }
 `;
 
 export const PricingTitleWrapper = styled.div`
   display: flex;
-  /* border: 2px solid blue; */
   width: 100%;
   height: 15vh;
   justify-content: space-between;
@@ -25,7 +22,6 @@ export const PricingTitleWrapper = styled.div`
 
 export const Title = styled.div`
   display: flex;
-  /* border: 2px solid red; */
   margin-left: 2.5rem;
   flex-direction: column;
 `;
@@ -34,12 +30,19 @@ export const PricingTitle = styled.h2`
   display: flex;
   font-size: 40px;
   font-weight: 600;
+  display: flex;
+  @media screen and (max-width: 968px) {
+    font-size: 30px;
+  }
 `;
 export const PricingSubTitle = styled.p`
   display: flex;
   font-size: 35px;
   color: orange;
   font-weight: 600;
+  @media screen and (max-width: 968px) {
+    font-size: 25px;
+  }
 `;
 
 export const MoneyBackWrapper = styled.div`
@@ -55,6 +58,9 @@ export const PriceContainer = styled.div`
   width: 100%;
   height: 85vh;
   justify-content: space-between;
+  @media screen and (max-width: 968px) {
+    height: 70vh;
+  }
 `;
 export const Container = styled.div`
   display: flex;
@@ -70,6 +76,9 @@ export const Container = styled.div`
   &:nth-child(2) {
     background-color: rgb(251 246 237);
     border: 2px solid rgb(239 215 178);
+  }
+  @media screen and (max-width: 968px) {
+    height: 90%;
   }
 `;
 
@@ -93,7 +102,6 @@ export const PopularTag = styled.div`
 `;
 
 export const IconWrapper = styled.div`
-  /* border: 2px solid red; */
   padding: 0 1rem;
   height: 10%;
   svg {
@@ -108,7 +116,6 @@ export const PriceTitle = styled.div`
   margin-top: 10px;
   font-weight: bold;
   padding: 0 1rem;
-  /* border: 2px solid green; */
 `;
 
 export const Prices = styled.div`
@@ -130,6 +137,9 @@ export const RealPrice = styled.p`
   font-size: 30px;
   font-weight: 500;
   color: rgb(123 138 197);
+  @media screen and (max-width: 968px) {
+    font-size: 25px;
+  }
 `;
 export const RealPriceGold = styled.p`
   display: flex;
@@ -137,6 +147,9 @@ export const RealPriceGold = styled.p`
   font-size: 30px;
   font-weight: 500;
   color: rgb(222 174 98);
+  @media screen and (max-width: 968px) {
+    font-size: 25px;
+  }
 `;
 export const RealPriceDiamond = styled.p`
   display: flex;
@@ -144,6 +157,9 @@ export const RealPriceDiamond = styled.p`
   font-size: 30px;
   font-weight: 500;
   color: rgb(222 121 58);
+  @media screen and (max-width: 968px) {
+    font-size: 25px;
+  }
 `;
 
 export const MobileDesktopDiv = styled.div`
@@ -189,6 +205,9 @@ export const Title2 = styled.p`
   margin-left: 10px;
   font-weight: bold;
   color: rgb(102 120 188);
+  @media screen and (max-width: 968px) {
+    font-size: 15px;
+  }
 `;
 export const Title3 = styled.p`
   display: flex;
@@ -196,6 +215,9 @@ export const Title3 = styled.p`
   margin-left: 10px;
   font-weight: bold;
   color: rgb(222 174 98);
+  @media screen and (max-width: 968px) {
+    font-size: 15px;
+  }
 `;
 export const Title4 = styled.p`
   display: flex;
@@ -203,6 +225,9 @@ export const Title4 = styled.p`
   margin-left: 10px;
   font-weight: bold;
   color: rgb(222 121 58);
+  @media screen and (max-width: 968px) {
+    font-size: 15px;
+  }
 `;
 
 export const DescriptionDiv = styled.div`
@@ -225,6 +250,11 @@ export const DescriptionList = styled.div`
 export const DescriptionItems = styled.p`
   display: flex;
   font-size: 16px;
+  text-align: start;
   color: grey;
   margin-left: 1rem;
+  @media screen and (max-width: 968px) {
+    font-size: 15px;
+    text-align: start;
+  }
 `;

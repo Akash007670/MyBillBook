@@ -2,13 +2,17 @@ import styled from "styled-components";
 
 export const FooterElementWrapper = styled.div`
   display: flex;
-  /* border: 2px solid blue; */
   width: 100%;
   max-width: 1500px;
   margin: 0 auto;
   height: 30vh;
   padding: 1.5rem;
   justify-content: space-between;
+  @media screen and (max-width: 968px) {
+    height: 35vh;
+    padding: 0;
+    justify-content: space-around;
+  }
 `;
 
 export const Title = styled.h2`
@@ -16,38 +20,43 @@ export const Title = styled.h2`
   font-size: 20px;
   color: orange;
   text-align: center;
-  /* border: 2px solid red; */
 `;
 
 export const GetInTouchSection = styled.div`
   display: flex;
-  /* border: 2px solid red; */
+
   height: 100%;
   width: 30%;
   flex-direction: column;
   padding: 0 1rem;
   /* justify-content: space-around; */
+  @media screen and (max-width: 968px) {
+  }
 `;
 
 export const Email = styled.p`
   display: flex;
   font-size: 1rem;
-  /* border: 2px solid red; */
   font-weight: 500;
   margin-top: 10px;
 `;
 export const PhoneNumber = styled.p`
   display: flex;
   font-size: 2rem;
-  /* border: 2px solid red; */
   font-weight: 600;
   margin-top: 10px;
+  @media screen and (max-width: 968px) {
+    font-size: 1.5rem;
+  }
 `;
 export const ButtonWrapper = styled.div`
   display: flex;
-  /* border: 2px solid red; */
   margin-top: 1rem;
   height: 20%;
+  @media screen and (max-width: 968px) {
+    flex-direction: column;
+    height: 50%;
+  }
 `;
 export const Btn1 = styled.button`
   display: flex;
@@ -63,6 +72,10 @@ export const Btn1 = styled.button`
   border-radius: 8px;
   border: none;
   outline: none;
+  @media screen and (max-width: 968px) {
+    width: 60%;
+    height: 35%;
+  }
 `;
 export const Btn2 = styled.button`
   display: flex;
@@ -79,11 +92,15 @@ export const Btn2 = styled.button`
   border-radius: 8px;
   border: none;
   outline: none;
+  @media screen and (max-width: 968px) {
+    width: 60%;
+    height: 35%;
+    margin: 1rem 0;
+  }
 `;
 
 export const InformationSection = styled.div`
   display: flex;
-  /* border: 2px solid red; */
   height: 100%;
   width: 30%;
   flex-direction: column;
@@ -128,11 +145,13 @@ export const FooterListItems = styled.li`
 
 export const FollowUsSection = styled.div`
   display: flex;
-  /* border: 2px solid red; */
   height: 100%;
   width: 30%;
   flex-direction: column;
   padding: 0 1rem;
+  @media screen and (max-width: 968px) {
+    padding: 0;
+  }
 `;
 
 export const LinksWrapper = styled.div`

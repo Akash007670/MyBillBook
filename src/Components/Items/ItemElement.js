@@ -16,6 +16,9 @@ export const NavWrapper = styled.div`
   align-items: center;
   justify-content: space-between;
   padding: 2rem;
+  @media screen and (max-width: 968px) {
+    width: 100%;
+  }
 `;
 
 export const PhoneNumber = styled.div`
@@ -54,6 +57,9 @@ export const FormTableWrapper = styled.div`
   width: 65%;
   flex-direction: column;
   justify-content: space-between;
+  @media screen and (max-width: 968px) {
+    width: 70%;
+  }
 `;
 export const FormWrapper = styled.div`
   display: flex;
@@ -61,6 +67,9 @@ export const FormWrapper = styled.div`
   height: 100%;
   width: 35%;
   flex-direction: column;
+  @media screen and (max-width: 968px) {
+    width: 30%;
+  }
 `;
 
 export const TtileWrapper = styled.p`
@@ -76,10 +85,12 @@ export const TtileWrapper = styled.p`
 
 export const Form = styled.form`
   display: flex;
-  /* border: 2px solid red; */
   height: 65%;
   width: 100%;
   flex-direction: column;
+  @media screen and (max-width: 968px) {
+    height: 100%;
+  }
 `;
 
 export const Flex = styled.div`
@@ -89,13 +100,21 @@ export const Flex = styled.div`
   height: 22%;
   justify-content: space-between;
   padding: 1rem;
+  @media screen and (max-width: 968px) {
+    flex-direction: column;
+    height: 25%;
+    padding: 0;
+  }
 `;
 export const ItemNameWrapper = styled.div`
   display: flex;
-  /* border: 2px solid red; */
+
   width: 48%;
   flex-direction: column;
   height: 100%;
+  @media screen and (max-width: 968px) {
+    width: 100%;
+  }
 `;
 export const Text1 = styled.p`
   display: flex;
@@ -109,6 +128,11 @@ export const Text2 = styled.p`
   color: rgb(157 157 157);
   font-weight: 600;
   align-items: center;
+  @media screen and (max-width: 968px) {
+    justify-content: center;
+    text-align: center;
+    margin-top: 3rem;
+  }
 `;
 export const Input = styled.input`
   display: flex;
@@ -118,6 +142,9 @@ export const Input = styled.input`
   border: 2px solid rgb(231 228 228);
   &::placeholder {
     padding-left: 1.5rem;
+  }
+  @media screen and (max-width: 968px) {
+    height: 100%;
   }
 `;
 
@@ -154,6 +181,10 @@ export const Submit = styled.button`
   outline: none;
   color: white;
   background-color: rgb(76 60 206);
+  @media screen and (max-width: 968px) {
+    margin-top: 2rem;
+    height: 40%;
+  }
 `;
 
 //Form Table Css Starts Here //
@@ -196,7 +227,6 @@ export const Icon = styled.div`
 
 export const TableDataWrapper = styled.div`
   display: flex;
-  /* border: 2px solid blue; */
   margin-top: 1rem;
   height: 80%;
   padding: 0 2rem;
@@ -205,7 +235,6 @@ export const TableDataWrapper = styled.div`
 export const Table = styled.table`
   display: flex;
   flex-direction: column;
-  /* border: 2px solid red; */
   height: 100%;
   width: 100%;
 `;
@@ -216,6 +245,9 @@ export const Thead = styled.thead`
   border: 1px solid rgb(231 231 231);
   padding: 1rem;
   background-color: rgb(241 241 241);
+  @media screen and (max-width: 968px) {
+    padding: 0;
+  }
 `;
 export const Tr = styled.tr`
   display: flex;
@@ -224,6 +256,9 @@ export const Tr = styled.tr`
   /* border: 2px solid green; */
   padding: 1rem;
   justify-content: space-between;
+  @media screen and (max-width: 968px) {
+    padding: 0;
+  }
 `;
 
 export const TBodyRow = styled.tr`
@@ -243,7 +278,17 @@ export const Th = styled.th`
   height: 100%;
   align-items: center;
   text-align: center;
+  font-size: 18px;
   /* border: 2px solid black; */
+  @media screen and (max-width: 768px) {
+    font-size: 14px;
+  }
+  @media screen and (max-width: 968px) {
+    font-size: 14px;
+  }
+  @media screen and (max-width: 1200px) {
+    font-size: 14px;
+  }
 `;
 export const Tbody = styled.tbody`
   display: flex;
