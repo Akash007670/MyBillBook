@@ -13,11 +13,6 @@ import FormElement from "./FormElement";
 import TableElement from "./TableElement";
 
 const Items = () => {
-  const [logout, setLogout] = useState(false);
-  const [getFormData, setGetFormtData] = useState([]);
-  const [searchData, setSearchData] = useState("");
-  const [wholeData, setWholeData] = useState([]);
-  const [error, setError] = useState("");
   const [formData, setFormData] = useState({
     itemName: "",
     itemCode: "",
@@ -26,12 +21,15 @@ const Items = () => {
     measuringUnit: "",
     openingDate: "",
   });
+  const [logout, setLogout] = useState(false);
+  const [getFormData, setGetFormtData] = useState([]);
+  const [globalFormData, setGlobalFormData] = useState([]);
+  const [searchData, setSearchData] = useState("");
+  const [error, setError] = useState("");
   const history = useHistory();
   let phoneNumber = sessionStorage.getItem("phone");
-
-  useEffect(() => {
-    setWholeData(getFormData);
-  }, []);
+  localStorage.setItem("data", JSON.stringify(globalFormData));
+  let getGlobalFormData = localStorage.getItem("data");
 
   const errorHandler = () => {
     if (formData.itemName === "") {
@@ -63,6 +61,10 @@ const Items = () => {
       alert("Enter details");
     } else {
       setGetFormtData((prevState) => [
+        ...prevState,
+        { ...formData, _id: uuidv4() },
+      ]);
+      setGlobalFormData((prevState) => [
         ...prevState,
         { ...formData, _id: uuidv4() },
       ]);
@@ -101,7 +103,7 @@ const Items = () => {
       });
       setGetFormtData(filterResult);
     } else {
-      setGetFormtData(wholeData);
+      setGetFormtData(globalFormData);
     }
   };
 
@@ -121,6 +123,7 @@ const Items = () => {
             setFormData={setFormData}
             value={searchData}
             searchHandler={searchHandler}
+            globalData={globalFormData}
             error={error}
           />
           <FormElement

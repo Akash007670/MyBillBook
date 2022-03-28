@@ -19,7 +19,14 @@ import {
 import { ReactComponent as SearchIcon } from "../../assets/icn_search 1.svg";
 import { ReactComponent as NotFoundIcon } from "../../assets/icn_Inventory Reports.svg";
 
-const TableElement = ({ data, setFormData, value, searchHandler, error }) => {
+const TableElement = ({
+  data,
+  setFormData,
+  value,
+  searchHandler,
+  error,
+  golablData,
+}) => {
   const keys = data.length > 0 ? Object.keys(data[0]) : "";
 
   const updateHandler = (obj) => {
