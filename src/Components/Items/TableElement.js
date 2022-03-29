@@ -25,12 +25,14 @@ const TableElement = ({
   value,
   searchHandler,
   error,
-  golablData,
+  editForm,
 }) => {
   const keys = data.length > 0 ? Object.keys(data[0]) : "";
 
   const updateHandler = (obj) => {
     setFormData(obj);
+    editForm(true);
+    console.log(obj);
   };
 
   return (

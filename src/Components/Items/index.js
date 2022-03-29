@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 
 import {
@@ -26,10 +26,13 @@ const Items = () => {
   const [globalFormData, setGlobalFormData] = useState([]);
   const [searchData, setSearchData] = useState("");
   const [error, setError] = useState("");
+  const [edit, setEdit] = useState(false);
   const history = useHistory();
   let phoneNumber = sessionStorage.getItem("phone");
   localStorage.setItem("data", JSON.stringify(globalFormData));
-  let getGlobalFormData = localStorage.getItem("data");
+  // let getGlobalFormData = localStorage.getItem("data");
+
+  // console.log(edit);
 
   const errorHandler = () => {
     if (formData.itemName === "") {
@@ -57,7 +60,7 @@ const Items = () => {
   const formSubmitHandler = (e) => {
     e.preventDefault();
     errorHandler();
-    if (error) {
+    if (error && !edit) {
       alert("Enter details");
     } else {
       setGetFormtData((prevState) => [
@@ -68,6 +71,7 @@ const Items = () => {
         ...prevState,
         { ...formData, _id: uuidv4() },
       ]);
+      setEdit(false);
       setFormData({
         itemName: "",
         itemCode: "",
@@ -76,6 +80,12 @@ const Items = () => {
         measuringUnit: "",
         openingDate: "",
       });
+      if (edit) {
+        let hasId = formData.hasOwnProperty("_id");
+        if (hasId) {
+          alert("Editing values");
+        }
+      }
     }
     setFormData({
       itemName: "",
@@ -125,6 +135,7 @@ const Items = () => {
             searchHandler={searchHandler}
             globalData={globalFormData}
             error={error}
+            editForm={setEdit}
           />
           <FormElement
             setGetFormtData={setGetFormtData}
@@ -132,6 +143,7 @@ const Items = () => {
             setFormData={setFormData}
             formData={formData}
             error={error}
+            edit={edit}
           />
         </ItemFormWrapper>
       </ItemPageWrapper>
