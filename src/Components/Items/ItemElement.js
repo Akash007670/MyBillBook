@@ -90,6 +90,7 @@ export const Form = styled.form`
   flex-direction: column;
   @media screen and (max-width: 968px) {
     height: 100%;
+    padding: 1rem;
   }
 `;
 
@@ -97,9 +98,9 @@ export const Flex = styled.div`
   display: flex;
   /* border: 2px solid blue; */
   width: 100%;
-  height: 22%;
+  height: 25%;
   justify-content: space-between;
-  padding: 1rem;
+  padding: 0.5rem 1rem;
   @media screen and (max-width: 968px) {
     flex-direction: column;
     height: 25%;
@@ -108,10 +109,10 @@ export const Flex = styled.div`
 `;
 export const ItemNameWrapper = styled.div`
   display: flex;
-
+  /* border: 2px solid red; */
   width: 48%;
-  flex-direction: column;
   height: 100%;
+  flex-direction: column;
   @media screen and (max-width: 968px) {
     width: 100%;
   }
@@ -141,7 +142,7 @@ export const Input = styled.input`
   border-radius: 6px;
   border: 2px solid rgb(231 228 228);
   &::placeholder {
-    padding-left: 1.5rem;
+    padding-left: 1rem;
   }
   @media screen and (max-width: 968px) {
     height: 100%;
@@ -180,6 +181,7 @@ export const Submit = styled.button`
   border: none;
   outline: none;
   color: white;
+  margin-top: 1rem;
   background-color: rgb(76 60 206);
   @media screen and (max-width: 968px) {
     margin-top: 2rem;
@@ -203,24 +205,16 @@ export const TableTitle = styled.p`
 export const TableSearchbar = styled.div`
   display: flex;
   /* border: 2px solid green; */
-  margin-top: 10px;
+  position: relative;
+  margin: 0 2rem;
   height: 6%;
   width: 50%;
-  padding: 0 2rem;
 `;
 
-export const SearchbarWrapper = styled.div`
-  position: relative;
-`;
 export const Icon = styled.div`
-  display: flex;
-  align-items: center;
-  margin-left: 5px;
-  justify-content: center;
-  border-top: 2px solid rgb(231 228 228);
-  border-left: 2px solid rgb(231 228 228);
-  border-bottom: 2px solid rgb(231 228 228);
-  width: 2rem;
+  position: absolute;
+  right: 5px;
+  top: 14px;
 `;
 
 //Table data starts here//
@@ -322,6 +316,8 @@ export const NotFoundTitle = styled.p`
 
 export const ErrorText = styled.p`
   display: flex;
-  font-size: 12px;
+  /* border: 2px solid red; */
+  font-size: 10px;
   color: red;
+  /* margin-top: 1rem; */
 `;

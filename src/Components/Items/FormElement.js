@@ -13,7 +13,7 @@ import {
   TtileWrapper,
 } from "./ItemElement";
 
-const FormElement = ({ setFormData, formData, formSubmitHandler, error }) => {
+const FormElement = ({ setFormData, formData, formSubmitHandler }) => {
   return (
     <>
       <FormWrapper>
@@ -30,7 +30,7 @@ const FormElement = ({ setFormData, formData, formSubmitHandler, error }) => {
                 }
                 value={formData.itemName}
               />
-              {error && <ErrorText>Enter item name</ErrorText>}
+              {/* <ErrorText>Enter item name</ErrorText> */}
             </ItemNameWrapper>
             <ItemNameWrapper>
               <Text1>Item Code</Text1>
@@ -42,7 +42,7 @@ const FormElement = ({ setFormData, formData, formSubmitHandler, error }) => {
                 }
                 value={formData.itemCode}
               />
-              {error && <ErrorText>Enter item code</ErrorText>}
+              {/* <ErrorText>Enter item code</ErrorText> */}
             </ItemNameWrapper>
           </Flex>
           <Flex>
@@ -59,7 +59,7 @@ const FormElement = ({ setFormData, formData, formSubmitHandler, error }) => {
                 }
                 value={formData.salesPrice}
               />
-              {error && <ErrorText>Enter sales price</ErrorText>}
+              {/* <ErrorText>Enter sales price</ErrorText> */}
             </ItemNameWrapper>
             <ItemNameWrapper>
               <Text1>Purchase Price</Text1>
@@ -71,7 +71,7 @@ const FormElement = ({ setFormData, formData, formSubmitHandler, error }) => {
                 }
                 value={formData.purchasePrice}
               />
-              {error && <ErrorText>Enter purchase price</ErrorText>}
+              {/* <ErrorText>Enter purchase price</ErrorText> */}
             </ItemNameWrapper>
           </Flex>
           <Flex>
@@ -90,7 +90,7 @@ const FormElement = ({ setFormData, formData, formSubmitHandler, error }) => {
                 <option>kgs</option>
                 <option>ltr</option>
               </Select>
-              {error && <ErrorText>Enter measuring unit</ErrorText>}
+              {/* <ErrorText>Enter measuring unit</ErrorText> */}
             </ItemNameWrapper>
             <ItemNameWrapper>
               <Text1>Opening Stock Date</Text1>
@@ -102,7 +102,7 @@ const FormElement = ({ setFormData, formData, formSubmitHandler, error }) => {
                 }
                 value={formData.openingDate}
               />
-              {error && <ErrorText>Enter date</ErrorText>}
+              {/* <ErrorText>Enter date</ErrorText> */}
             </ItemNameWrapper>
           </Flex>
           <Flex>
