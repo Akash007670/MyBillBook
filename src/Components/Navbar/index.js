@@ -24,19 +24,19 @@ const Navbar = () => {
           </MobileIcon>
           <NavMenu>
             <NavItem>
-              <NavLinks to="myBillBook">Why Use My BillBook?</NavLinks>
+              <NavLinks to="/">Why Use My BillBook?</NavLinks>
             </NavItem>
             <NavItem>
-              <NavLinks to="who-is-it-for">Who is it For?</NavLinks>
+              <NavLinks to="/">Who is it For?</NavLinks>
             </NavItem>
             <NavItem>
-              <NavLinks to="online-store">Online Store</NavLinks>
+              <NavLinks to="/">Online Store</NavLinks>
             </NavItem>
             <NavItem>
-              <NavLinks to="pricing">Pricing</NavLinks>
+              <NavLinks to="/">Pricing</NavLinks>
             </NavItem>
             <NavItem>
-              <NavLinks to="faqs">FAQs</NavLinks>
+              <NavLinks to="/">FAQs</NavLinks>
             </NavItem>
           </NavMenu>
         </NavbarContainer>
