@@ -3,93 +3,97 @@ import styled from "styled-components";
 export const LoginSectionWrapper = styled.div`
   display: flex;
   height: 60vh;
+  max-width: 1600px;
   width: 100%;
+  border: 2px solid red;
+  padding: 0 4rem;
+  align-items: center;
   background-color: rgb(247 242 237);
   justify-content: space-between;
-`;
-
-export const ContentWrapper = styled.div`
-  display: flex;
-  width: 100%;
-  max-width: 1500px;
-  /* border: 2px solid green; */
-  margin: 0 auto;
-  justify-content: space-between;
+  @media screen and (max-width: 768px) {
+    /* background-color: red; */
+    padding: 0 1.5rem;
+  }
+  @media screen and (max-width: 1024px) {
+    /* background-color: red; */
+  }
 `;
 
 export const HeroTextWrapper = styled.div`
   display: flex;
-  /*  */
+  position: relative;
+  /* border: 2px solid green; */
   height: 100%;
-  width: 60%;
-  justify-content: space-between;
+  width: 55%;
+  justify-content: center;
   flex-direction: column;
-  /* margin: 0 auto; */
   align-items: center;
-  @media screen and (max-width: 968px) {
+  @media screen and (max-width: 768px) {
     width: 50%;
+  }
+  @media screen and (max-width: 1024px) {
+    width: 60%;
   }
 `;
 
 export const HeroText = styled.div`
   display: flex;
-  height: 40%;
+  height: 50%;
   width: 100%;
-  margin-top: 8rem;
-  /* border: 2px solid green; */
-  padding-left: 1.5rem;
+  margin-top: -7rem;
+  /* border: 2px solid red; */
   flex-direction: column;
   justify-content: space-around;
-  @media screen and (max-width: 968px) {
-    height: 60%;
-    margin-top: 4rem;
-  }
 `;
 
 export const Heading = styled.h2`
   display: flex;
-  /*  */
-  font-size: 40px;
+  /* border: 2px solid blue; */
+  font-size: 25px;
   font-weight: bold;
-  text-align: start;
-  margin-bottom: 10px;
-  @media screen and (max-width: 968px) {
-    font-size: 35px;
+  @media screen and (max-width: 768px) {
+    font-size: 22px;
   }
   @media screen and (max-width: 1024px) {
-    font-size: 35px;
+    font-size: 26px;
   }
 `;
 export const Heading2 = styled.p`
   display: flex;
-  margin-top: -2rem;
-  font-size: 40px;
-  font-weight: 400;
-  text-align: start;
-  @media screen and (max-width: 968px) {
-    font-size: 35px;
+  /* border: 2px solid black; */
+  font-size: 22px;
+  font-weight: bold;
+  @media screen and (max-width: 768px) {
+    font-size: 20px;
+  }
+  @media screen and (max-width: 1024px) {
+    font-size: 25px;
   }
 `;
 export const Heading3 = styled.p`
   display: flex;
-  font-size: 20px;
-  text-align: start;
+  font-size: 18px;
+  /* border: 2px solid brown; */
   color: #0c0c0cb5;
   font-weight: bold;
-  @media screen and (max-width: 968px) {
-    font-size: 16px;
+  @media screen and (max-width: 768px) {
+    /* background-color: red; */
+  }
+  @media screen and (max-width: 1024px) {
+    font-size: 20px;
   }
 `;
 
-export const MadeInLoveWrapper = styled.div`
+export const LogoWrapper = styled.div`
   display: flex;
-  /*  */
-  width: 93%;
-  align-items: center;
-`;
-
-export const Isowrapper = styled.div`
-  margin-left: 2rem;
+  position: absolute;
+  /* border: 2px solid purple; */
+  bottom: 10px;
+  width: 100%;
+  gap: 1rem;
+  @media screen and (max-width: 768px) {
+    /* background-color: red; */
+  }
 `;
 
 //Login part starts here ///
@@ -100,12 +104,16 @@ export const LoginFormWrapper = styled.div`
   flex-direction: column;
   height: 95%;
   width: 35%;
-  margin: 1rem 2.5rem;
   background-color: white;
   border-radius: 8px;
-  padding: 2rem;
+  padding: 1rem;
   box-shadow: 1px 2px 15px rgb(243, 233, 224);
-  @media screen and (max-width: 968px) {
+  @media screen and (max-width: 1024px) {
+    /* background-color: red; */
+    width: 35%;
+  }
+  @media screen and (max-width: 768px) {
+    /* background-color: red; */
     width: 50%;
   }
 `;
@@ -157,11 +165,14 @@ export const PhoneInput = styled.input`
   height: 100%;
   width: 100%;
   outline: none;
-  font-size: 18px;
+  font-size: 16px;
   border-top: 1px solid grey;
   border-bottom: 1px solid grey;
   border-right: 1px solid grey;
   border-left: 1px solid rgb(199, 196, 196);
+  &::placeholder {
+    font-size: 14px;
+  }
 `;
 
 export const OtpInput = styled.input`
@@ -169,13 +180,16 @@ export const OtpInput = styled.input`
   height: 100%;
   width: 100%;
   outline: none;
-  font-size: 18px;
+  font-size: 16px;
   border-top: 1px solid grey;
   border-bottom: 1px solid grey;
   border-right: 1px solid grey;
   border-left: 1px solid rgb(199, 196, 196);
   margin-top: 1rem;
   margin-bottom: 1rem;
+  &::placeholder {
+    font-size: 14px;
+  }
 `;
 
 export const OtpInputWrapper = styled.div`
