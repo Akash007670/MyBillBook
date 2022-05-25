@@ -15,31 +15,29 @@ const Navbar = () => {
   return (
     <>
       <Nav>
-        <NavbarContainer>
-          <NavLogo to="/">
-            <img src={myBillBookLogo} alt="mybillbook logo" />
-          </NavLogo>
-          <MobileIcon>
-            <FaBars />
-          </MobileIcon>
-          <NavMenu>
-            <NavItem>
-              <NavLinks to="/">Why Use My BillBook?</NavLinks>
-            </NavItem>
-            <NavItem>
-              <NavLinks to="/">Who is it For?</NavLinks>
-            </NavItem>
-            <NavItem>
-              <NavLinks to="/">Online Store</NavLinks>
-            </NavItem>
-            <NavItem>
-              <NavLinks to="/">Pricing</NavLinks>
-            </NavItem>
-            <NavItem>
-              <NavLinks to="/">FAQs</NavLinks>
-            </NavItem>
-          </NavMenu>
-        </NavbarContainer>
+        <NavLogo to="/">
+          <img src={myBillBookLogo} alt="mybillbook logo" />
+        </NavLogo>
+        <MobileIcon>
+          <FaBars />
+        </MobileIcon>
+        <NavMenu>
+          <NavItem>
+            <NavLinks to="/">Why Use My BillBook?</NavLinks>
+          </NavItem>
+          <NavItem>
+            <NavLinks to="/">Who is it For?</NavLinks>
+          </NavItem>
+          <NavItem>
+            <NavLinks to="/">Online Store</NavLinks>
+          </NavItem>
+          <NavItem>
+            <NavLinks to="/">Pricing</NavLinks>
+          </NavItem>
+          <NavItem>
+            <NavLinks to="/">FAQs</NavLinks>
+          </NavItem>
+        </NavMenu>
       </Nav>
     </>
   );
