@@ -81,14 +81,14 @@ const FormElement = ({ setFormData, formData, formSubmitHandler }) => {
                 onChange={(e) =>
                   setFormData({ ...formData, measuringUnit: e.target.value })
                 }
-                // value={formData.measuringUnit}
+                value={formData.measuringUnit}
               >
                 <option>Select Value</option>
-                <option>pcs</option>
-                <option>boxes</option>
-                <option>gms</option>
-                <option>kgs</option>
-                <option>ltr</option>
+                <option value="pcs">pcs</option>
+                <option value="boxes">boxes</option>
+                <option value="gms">gms</option>
+                <option value="kgs">kgs</option>
+                <option value="ltr">ltr</option>
               </Select>
               {/* <ErrorText>Enter measuring unit</ErrorText> */}
             </ItemNameWrapper>
@@ -96,7 +96,6 @@ const FormElement = ({ setFormData, formData, formSubmitHandler }) => {
               <Text1>Opening Stock Date</Text1>
               <Input
                 type="date"
-                placeholder="Enter item code"
                 onChange={(e) =>
                   setFormData({ ...formData, openingDate: e.target.value })
                 }

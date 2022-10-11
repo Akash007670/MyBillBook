@@ -6,12 +6,10 @@ import { Route, Switch } from "react-router-dom";
 
 const App = () => {
   return (
-    <div>
-      <Switch>
-        <Route path="/" component={Dashboard} exact />
-        <Route path="/items" component={Items} />
-      </Switch>
-    </div>
+    <Switch>
+      <Route path="/" component={Dashboard} exact />
+      <Route path="/items" component={Items} />
+    </Switch>
   );
 };
 

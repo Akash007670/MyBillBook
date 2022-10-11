@@ -38,14 +38,31 @@ const Items = () => {
 
   const formSubmitHandler = (e) => {
     e.preventDefault();
-    setGetFormtData((prevState) => [
-      ...prevState,
-      { ...formData, _id: uuidv4() },
-    ]);
-    setGlobalFormData((prevState) => [
-      ...prevState,
-      { ...formData, _id: uuidv4() },
-    ]);
+    let {
+      itemName,
+      itemCode,
+      salesPrice,
+      purchasePrice,
+      measuringUnit,
+      openingDate,
+    } = formData;
+    if (
+      itemName &&
+      itemCode &&
+      salesPrice &&
+      purchasePrice &&
+      measuringUnit &&
+      openingDate
+    ) {
+      setGetFormtData((prevState) => [
+        ...prevState,
+        { ...formData, _id: uuidv4() },
+      ]);
+      setGlobalFormData((prevState) => [
+        ...prevState,
+        { ...formData, _id: uuidv4() },
+      ]);
+    }
     setFormData({
       itemName: "",
       itemCode: "",
