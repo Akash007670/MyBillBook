@@ -5,7 +5,7 @@ export const LoginSectionWrapper = styled.div`
   height: 60vh;
   max-width: 1600px;
   width: 100%;
-  border: 2px solid red;
+  /* border: 2px solid red; */
   padding: 0 4rem;
   align-items: center;
   background-color: rgb(247 242 237);

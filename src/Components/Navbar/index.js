@@ -4,7 +4,6 @@ import { FaBars } from "react-icons/fa";
 import {
   MobileIcon,
   Nav,
-  NavbarContainer,
   NavItem,
   NavLinks,
   NavLogo,
