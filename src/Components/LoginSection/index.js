@@ -70,7 +70,7 @@ const LoginSection = () => {
         }
       );
       setGotOtp(true);
-      localStorage.setItem("phone", phoneNumber);
+      window.localStorage.setItem("PHONE_NO", phoneNumber);
       console.log(res);
     } catch {
       console.log("error");
