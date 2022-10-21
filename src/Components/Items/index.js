@@ -86,7 +86,7 @@ const Items = () => {
           return ele;
         })
       );
-      alert("i am editing");
+      setEdit(false);
     } else if (
       itemName &&
       itemCode &&
@@ -299,7 +299,7 @@ const Items = () => {
               </Flex>
               <Flex>
                 <Submit type="submit" onClick={formSubmitHandler}>
-                  Save
+                  {edit ? "Edit" : "Save"}
                 </Submit>
               </Flex>
             </Form>
