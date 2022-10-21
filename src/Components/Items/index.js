@@ -45,6 +45,8 @@ const Items = () => {
     openingDate: "",
   });
   const [data, setData] = useState([]);
+  const [edit, setEdit] = useState(false);
+  const [isEdit, setIsEdit] = useState(null);
   const [searchQuery, setSearchQuery] = useState("");
   const [logout, setLogout] = useState(false);
   const history = useHistory();
@@ -67,7 +69,25 @@ const Items = () => {
       measuringUnit,
       openingDate,
     } = formData;
-    if (
+    if (edit) {
+      setData(
+        data.map((ele) => {
+          if (ele.id === isEdit) {
+            return {
+              ...ele,
+              itemName: formData.itemName,
+              itemCode: formData.itemCode,
+              salesPrice: formData.salesPrice,
+              purchasePrice: formData.purchasePrice,
+              measuringUnit: formData.measuringUnit,
+              openingDate: formData.openingDate,
+            };
+          }
+          return ele;
+        })
+      );
+      alert("i am editing");
+    } else if (
       itemName &&
       itemCode &&
       salesPrice &&
@@ -79,15 +99,15 @@ const Items = () => {
         ...prev,
         { ...formData, id: Math.floor(Math.random() * 1000) },
       ]);
-      setFormData({
-        itemName: "",
-        itemCode: "",
-        salesPrice: "",
-        purchasePrice: "",
-        measuringUnit: "",
-        openingDate: "",
-      });
     }
+    setFormData({
+      itemName: "",
+      itemCode: "",
+      salesPrice: "",
+      purchasePrice: "",
+      measuringUnit: "",
+      openingDate: "",
+    });
   };
 
   useEffect(() => {
@@ -105,26 +125,6 @@ const Items = () => {
 
   const keys = data.length > 0 ? Object.keys(data[0]) : "";
 
-  // const searchHandler = (value) => {
-  //   setSearchData(value);
-  //   if (value !== "") {
-  //     let filterResult = [...getFormData];
-  //     filterResult = filterResult.filter((row) => {
-  //       const userData = `${Object.values(
-  //         `${row.itemName} ${row.itemCode}`
-  //       ).join("")}.`;
-  //       const el = userData.toLowerCase().trim();
-  //       if (el.includes(value.toLowerCase().trim())) {
-  //         return true;
-  //       }
-  //       return false;
-  //     });
-  //     setGetFormtData(filterResult);
-  //   } else {
-  //     setGetFormtData(globalFormData);
-  //   }
-  // };
-
   const filterResult = data.filter((row) => {
     const userData = `${Object.values(`${row.itemName} ${row.itemCode}`).join(
       ""
@@ -136,6 +136,12 @@ const Items = () => {
     return false;
   });
 
+  const editHandler = (id) => {
+    setEdit(true);
+    const newEditItem = data.find((ele) => ele.id === id);
+    setFormData(newEditItem);
+    setIsEdit(id);
+  };
   return (
     <>
       <ItemPageWrapper>
@@ -176,7 +182,10 @@ const Items = () => {
                     <>
                       {filterResult.length > 0 &&
                         filterResult.map((obj, index) => (
-                          <TBodyRow key={index}>
+                          <TBodyRow
+                            key={index}
+                            onClick={() => editHandler(obj.id)}
+                          >
                             {keys.slice(0, 6).map((item, index) => (
                               <Td key={index}>{obj[item]}</Td>
                             ))}
