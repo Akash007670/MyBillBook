@@ -1,4 +1,7 @@
 import React, { useEffect, useState } from "react";
+import { v4 as uuidv4 } from "uuid";
+import { useContext } from "react";
+import { AuthContext } from "../AuthContext";
 
 import {
   ItemFormWrapper,
@@ -31,7 +34,6 @@ import {
   NotFound,
   NotFoundTitle,
 } from "./ItemElement";
-import { useHistory } from "react-router-dom";
 import { ReactComponent as SearchIcon } from "../../assets/icn_search 1.svg";
 import { ReactComponent as NotFoundIcon } from "../../assets/icn_Inventory Reports.svg";
 
@@ -48,16 +50,7 @@ const Items = () => {
   const [edit, setEdit] = useState(false);
   const [isEdit, setIsEdit] = useState(null);
   const [searchQuery, setSearchQuery] = useState("");
-  const [logout, setLogout] = useState(false);
-  const history = useHistory();
-  let phoneNumber = window.localStorage.getItem("PHONE_NO");
-
-  const logOutHandler = () => {
-    setLogout(true);
-    history.push("/");
-    alert("Logout succesfully");
-    window.localStorage.removeItem("PHONE_NO");
-  };
+  const { logout } = useContext(AuthContext);
 
   const formSubmitHandler = (e) => {
     e.preventDefault();
@@ -95,10 +88,7 @@ const Items = () => {
       measuringUnit &&
       openingDate
     ) {
-      setData((prev) => [
-        ...prev,
-        { ...formData, id: Math.floor(Math.random() * 1000) },
-      ]);
+      setData((prev) => [...prev, { ...formData, id: uuidv4() }]);
     }
     setFormData({
       itemName: "",
@@ -115,7 +105,7 @@ const Items = () => {
       window.localStorage.setItem("FORM_DATA", JSON.stringify([]));
     } else {
       const getTotalData = JSON.parse(window.localStorage.getItem("FORM_DATA"));
-      setData(getTotalData);
+      setData((prev) => [...prev, ...getTotalData]);
     }
   }, []);
 
@@ -146,10 +136,8 @@ const Items = () => {
     <>
       <ItemPageWrapper>
         <NavWrapper>
-          <PhoneNumber>{phoneNumber}</PhoneNumber>
-          <Logout onClick={logOutHandler} value={logout}>
-            Logout
-          </Logout>
+          <PhoneNumber>Items Dashboard</PhoneNumber>
+          <Logout onClick={logout}>Logout</Logout>
         </NavWrapper>
         <ItemFormWrapper>
           <FormTableWrapper>
@@ -177,30 +165,28 @@ const Items = () => {
                     <Th>opening date</Th>
                   </Tr>
                 </Thead>
-                <Tbody>
-                  {filterResult.length > 0 ? (
-                    <>
-                      {filterResult.length > 0 &&
-                        filterResult.map((obj, index) => (
-                          <TBodyRow
-                            key={index}
-                            onClick={() => editHandler(obj.id)}
-                          >
-                            {keys.slice(0, 6).map((item, index) => (
-                              <Td key={index}>{obj[item]}</Td>
-                            ))}
-                          </TBodyRow>
-                        ))}
-                    </>
-                  ) : (
-                    <NotFound>
-                      <NotFoundIcon />
-                      <NotFoundTitle>
-                        You Do not have any items to display
-                      </NotFoundTitle>
-                    </NotFound>
-                  )}
-                </Tbody>
+                {filterResult.length > 0 ? (
+                  <Tbody>
+                    {filterResult.length > 0 &&
+                      filterResult.map((obj, index) => (
+                        <TBodyRow
+                          key={index}
+                          onClick={() => editHandler(obj.id)}
+                        >
+                          {keys.slice(0, 6).map((item, index) => (
+                            <Td key={index}>{obj[item]}</Td>
+                          ))}
+                        </TBodyRow>
+                      ))}
+                  </Tbody>
+                ) : (
+                  <NotFound>
+                    <NotFoundIcon />
+                    <NotFoundTitle>
+                      You Do not have any items to display
+                    </NotFoundTitle>
+                  </NotFound>
+                )}
               </Table>
             </TableDataWrapper>
           </FormTableWrapper>
