@@ -2,14 +2,28 @@ import React from "react";
 import "./App.css";
 import Items from "./Components/Items";
 import Dashboard from "./Components/Dashboard";
-import { Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import AuthProvider from "./Components/AuthContext";
+import ProtectedRoute from "./Components/ProtectedRoute";
 
 const App = () => {
   return (
-    <Switch>
-      <Route path="/" component={Dashboard} exact />
-      <Route path="/items" component={Items} />
-    </Switch>
+    <Router>
+      <AuthProvider>
+        <Routes>
+          <Route path="/" element={<Dashboard />} />
+          <Route
+            path="/items"
+            element={
+              <ProtectedRoute>
+                <Items />
+              </ProtectedRoute>
+            }
+          />
+          <Route path="*" element="Not found" />
+        </Routes>
+      </AuthProvider>
+    </Router>
   );
 };
 

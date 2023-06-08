@@ -74,6 +74,7 @@ export const Heading3 = styled.p`
   display: flex;
   font-size: 18px;
   /* border: 2px solid brown; */
+  margin-top: 10px;
   color: #0c0c0cb5;
   font-weight: bold;
   @media screen and (max-width: 768px) {
@@ -102,9 +103,11 @@ export const LoginFormWrapper = styled.div`
   display: flex;
   border: 2px solid rgb(243 233 224);
   flex-direction: column;
+  align-items: center;
   height: 95%;
-  width: 35%;
+  width: 30%;
   background-color: white;
+  /* border: 2px solid red; */
   border-radius: 8px;
   padding: 1rem;
   box-shadow: 1px 2px 15px rgb(243, 233, 224);

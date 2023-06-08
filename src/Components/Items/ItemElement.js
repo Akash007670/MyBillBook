@@ -30,16 +30,17 @@ export const PhoneNumber = styled.div`
 
 export const Logout = styled.button`
   display: flex;
-  font-size: 20px;
-  width: 6%;
-  height: 60%;
+  font-size: 16px;
+  width: 100px;
+  border-radius: 20px;
+  height: 40px;
   justify-content: center;
   align-items: center;
-  color: black;
+  color: white;
   border: none;
   outline: none;
   cursor: pointer;
-  background-color: white;
+  background-color: #e72a2a;
 `;
 
 export const ItemFormWrapper = styled.div`
@@ -213,8 +214,8 @@ export const TableSearchbar = styled.div`
 
 export const Icon = styled.div`
   position: absolute;
-  right: 5px;
-  top: 14px;
+  right: 10px;
+  top: 10px;
 `;
 
 //Table data starts here//
@@ -224,6 +225,7 @@ export const TableDataWrapper = styled.div`
   margin-top: 1rem;
   height: 80%;
   padding: 0 2rem;
+  /* border: 2px solid red; */
 `;
 
 export const Table = styled.table`
@@ -231,6 +233,7 @@ export const Table = styled.table`
   flex-direction: column;
   height: 100%;
   width: 100%;
+  /* border: 2px solid brown; */
 `;
 
 export const Thead = styled.thead`
@@ -248,7 +251,7 @@ export const Tr = styled.tr`
   height: 100%;
   width: 100%;
   /* border: 2px solid green; */
-  padding: 1rem;
+  /* padding: 1rem; */
   justify-content: space-between;
   @media screen and (max-width: 968px) {
     padding: 0;
@@ -257,12 +260,15 @@ export const Tr = styled.tr`
 
 export const TBodyRow = styled.tr`
   display: flex;
-  height: 15%;
-  text-align: start;
+  height: 50px;
+  text-align: center;
   border: 1px solid rgb(231 231 231);
-  padding: 2rem;
+  align-items: center;
+  align-content: center;
+  padding: 10px 5px;
   /* margin-bottom: 1px; */
-  justify-content: space-between;
+  font-size: 16px;
+  justify-content: space-around;
 `;
 
 export const Th = styled.th`
@@ -272,8 +278,7 @@ export const Th = styled.th`
   height: 100%;
   align-items: center;
   text-align: center;
-  font-size: 18px;
-  /* border: 2px solid black; */
+  font-size: 16px;
   @media screen and (max-width: 768px) {
     font-size: 14px;
   }
@@ -288,12 +293,14 @@ export const Tbody = styled.tbody`
   display: flex;
   /* border: 2px solid blue; */
   flex-direction: column;
-  height: 60%;
+  overflow: auto;
+  height: 90%;
 `;
 export const Td = styled.td`
   display: flex;
   /* border: 2px solid gray; */
-  width: 9%;
+  width: 10%;
+  height: 20px;
   align-items: center;
   cursor: pointer;
 `;
